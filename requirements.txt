@@ -1,0 +1,5 @@
+sudo apt update
+sudo apt install unixodbc-dev
+sudo apt install odbcinst1debian2
+sudo apt install libodbc1
+sudo apt install msodbcsql17
