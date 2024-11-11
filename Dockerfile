@@ -11,8 +11,8 @@ RUN mkdir -p /var/opt/mssql/backup
 WORKDIR /var/opt/mssql/backup
 
 # Copie o arquivo de backup e o script de restauração para o contêiner
-COPY base_data.bak /var/opt/mssql/backup/base_data.bak
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY ../assets/base_data.bak /var/opt/mssql/backup/base_data.bak
+COPY ../assets/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Inicia o SQL Server
 CMD /opt/mssql/bin/sqlservr

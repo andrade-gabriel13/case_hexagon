@@ -1,31 +1,9 @@
-version: '3.8'
-
 services:
   sqlserver:
     build:
       context: .
       dockerfile: Dockerfile  # Usando o Dockerfile para criar a imagem personalizada
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=case!h3xagon
-      - MSSQL_PID=Express
     user: root
     ports:
       - 1433:1433
-    volumes:
-      - sqlserver_data1:/var/opt/mssql
-      - ./backup:/var/opt/mssql/backup
     restart: always
-    command: >
-      bash -c '
-        echo "Aguardando o SQL Server inicializar...";
-        while ! /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P case!h3xagon -Q "SELECT 1"; do
-          sleep 5;
-        done;
-        echo "SQL Server está pronto, iniciando a restauração...";
-        /usr/local/bin/entrypoint.sh;
-        echo "Banco de dados restaurado com sucesso!";
-      '
-
-volumes:
-  sqlserver_data1:

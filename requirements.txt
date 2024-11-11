@@ -1,5 +1,18 @@
-sudo apt update
-sudo apt install unixodbc-dev
-sudo apt install odbcinst1debian2
-sudo apt install libodbc1
-sudo apt install msodbcsql17
+# Bibliotecas de conectividade com o SQL Server
+pyodbc==4.0.35
+pymssql==2.2.4
+
+# Bibliotecas de processamento de dados
+pandas==2.0.1
+
+# Bibliotecas para plotagem
+plotly==5.10.0
+
+# Streamlit para criação de interfaces web
+streamlit==1.19.0
+
+# Bibliotecas de conexão com banco de dados SQL (SQLAlchemy)
+SQLAlchemy==2.0.18
+
+# Para log
+logging
